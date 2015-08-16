@@ -25,7 +25,7 @@ import org.apache.hadoop.mapreduce.security.TokenCache;
 
 object TeraOutputFormat {
   val FINAL_SYNC_ATTRIBUTE : String = "mapreduce.terasort.final.sync";
-  val OUTDIR = "mapreduce.output.fileoutputformat.outputdir"
+  val OUTDIR = "mapred.output.dir"
 }
 
 class TeraOutputFormat extends FileOutputFormat[Array[Byte], Array[Byte]] {

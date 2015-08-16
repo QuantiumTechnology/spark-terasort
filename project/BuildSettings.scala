@@ -1,5 +1,5 @@
 import sbt._
-import Keys._
+import sbt.Keys._
 
 object BuildSettings {
 
@@ -8,9 +8,11 @@ object BuildSettings {
     organization  := "com.nexr",
     version       := "0.1",
     description   := "Simple terasort.",
-    scalaVersion  := "2.10.5", // -> 2.10.0 when Spark is ready
+    scalaVersion  := "2.10.4", // -> 2.10.0 when Spark is ready
     scalacOptions := Seq("-deprecation", "-encoding", "utf8"),
-    resolvers     ++= Dependencies.resolutionRepos
+    resolvers     ++= Dependencies.resolutionRepos,
+    scalacOptions += "-target:jvm-1.7",
+    javacOptions ++= Seq("-source", "1.7", "-target", "1.7")
   )
 
   // sbt-assembly settings for building a fat jar
